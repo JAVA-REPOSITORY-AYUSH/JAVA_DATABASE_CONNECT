@@ -5,21 +5,21 @@ import java.util.stream.Stream;
 import java.sql.*;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         Connection connection = null;
         try  {
+            //all db operations in this try
             connection = DB_CONNECT.getConnection();
             System.out.println("Connected to the database successfully.");
 
-            // Perform database operations here...
+           //getting student via roll number 
+            StudentDAO student_dao = new StudentDAO(connection);
+            Student dummy = student_dao.getStudentByRollNumber(1);
+            System.out.println(dummy.name + " " + dummy.roll_number);
 
         } catch (SQLException e) {
             System.err.println("SQL Error: " + e.getMessage());
         }
-
-        StudentDAO student_dao = new StudentDAO(connection);
-        Student dummy = student_dao.getStudentByRollNumber(1);
-        System.out.println(dummy.name + " " + dummy.roll_number);
 
     }
 }
