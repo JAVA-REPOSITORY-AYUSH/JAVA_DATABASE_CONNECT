@@ -9,7 +9,7 @@ public class DB_CONNECT {
 
     private static final String URL = "jdbc:mysql://localhost:3306/students";
     private static final String USER = "root";
-    private static final String PASSWORD = "ayush@1234";
+    private static final String PASSWORD = "";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver"; // Example for MySQL
 
     static {
